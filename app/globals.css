@@ -511,3 +511,110 @@ input {
   font-size: 15px;
   white-space: pre-line;
 }
+
+/* ---------- [대시보드] ---------- */
+.dash-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.dash-date {
+  font-size: 13px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 12px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.stat-value {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.red {
+  color: var(--overdue);
+}
+
+.table-card {
+  margin-bottom: 16px;
+  padding: 16px 0 8px;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 16px 8px;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table th,
+.table td {
+  padding: 10px 8px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--line);
+}
+
+.table th:first-child,
+.table td:first-child {
+  padding-left: 16px;
+}
+
+.table th:last-child,
+.table td:last-child {
+  padding-right: 16px;
+}
+
+.table tr:last-child td {
+  border-bottom: 0;
+}
+
+.table td:first-child {
+  white-space: normal;
+}
+
+.table th {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.table .num {
+  text-align: right;
+}
+
+.table .strong {
+  font-weight: 600;
+}
+
+.table .none {
+  text-align: center;
+  color: var(--muted);
+  padding: 20px;
+}
