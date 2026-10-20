@@ -1,0 +1,403 @@
+/* PRD 6번 디자인 기준 */
+:root {
+  --band: #0f766e;      /* 띠 (짙은 청록) */
+  --bg: #f5f7f7;        /* 바탕 */
+  --card: #ffffff;      /* 카드 */
+  --text: #1f2933;      /* 글자 */
+  --accent: #f5b700;    /* 강조 노랑: 진행률 막대, 지금 보고 있는 탭, 오늘 기한에만 */
+  --overdue: #d64545;   /* 기한 지남 */
+  --muted: #6b7680;
+  --line: #e3e8e8;
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo",
+    "Noto Sans KR", "Malgun Gothic", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+/* ---------- 맨 위 띠 ---------- */
+.band {
+  background: var(--band);
+  color: #fff;
+}
+
+.band-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 14px 16px 0;
+}
+
+.band-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+}
+
+.who {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  min-width: 0;
+}
+
+.who-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logout {
+  flex: none;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ---------- 탭 ---------- */
+.tabs {
+  display: flex;
+  margin-top: 10px;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 12px 4px 10px;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  border-bottom: 3px solid transparent;
+}
+
+.tab:hover {
+  color: #fff;
+}
+
+.tab.active {
+  color: #fff;
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- 본문 ---------- */
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 20px 16px 48px;
+}
+
+.page-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: 0 1px 2px rgba(31, 41, 51, 0.06);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ---------- 로그인 화면 ---------- */
+.login-hero {
+  background: var(--band);
+  color: #fff;
+  padding: 48px 16px 72px;
+  text-align: center;
+}
+
+.login-hero h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.login-hero p {
+  margin: 6px 0 0;
+  opacity: 0.85;
+  font-size: 15px;
+}
+
+.login-card {
+  max-width: 400px;
+  margin: -44px auto 0;
+  padding: 0 16px 48px;
+}
+
+.field {
+  display: block;
+  margin-bottom: 14px;
+}
+
+.field span {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.field input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--text);
+  font-size: 16px; /* 휴대폰에서 입력할 때 화면이 확대되지 않게 16px 이상 */
+}
+
+.field input:focus {
+  outline: 2px solid var(--band);
+  outline-offset: -1px;
+  border-color: var(--band);
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid var(--band);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.btn-primary {
+  background: var(--band);
+  color: #fff;
+}
+
+.btn-outline {
+  background: #fff;
+  color: var(--band);
+  margin-top: 10px;
+}
+
+.notice {
+  margin: 0 0 14px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.notice-error {
+  background: #fdecec;
+  color: #a12f2f;
+}
+
+.hint {
+  margin: 16px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ---------- [내 할 일] ---------- */
+.summary {
+  margin-bottom: 20px;
+}
+
+.summary-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.summary-name {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.dday {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--band);
+}
+
+.progress-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.progress {
+  flex: 1;
+  height: 12px;
+  background: #eef1f1;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+
+.progress-num {
+  font-weight: 700;
+  font-size: 18px;
+  min-width: 3.2em;
+  text-align: right;
+}
+
+.summary-overdue {
+  margin: 10px 0 0;
+  color: var(--overdue);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.group {
+  margin-bottom: 20px;
+}
+
+.group-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--muted);
+  margin: 0 0 8px 4px;
+}
+
+.task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 2px rgba(31, 41, 51, 0.06);
+  overflow: hidden;
+}
+
+.task {
+  border-left: 4px solid transparent;
+}
+
+.task + .task {
+  border-top: 1px solid var(--line);
+}
+
+.task.overdue {
+  border-left-color: var(--overdue);
+  background: #fdf3f3;
+}
+
+.task.due-today {
+  border-left-color: var(--accent);
+  background: #fff8e1;
+}
+
+.task-label {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px 14px 12px;
+  cursor: pointer;
+}
+
+.task-check {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  margin: 1px 0 0;
+  accent-color: var(--band);
+  cursor: pointer;
+}
+
+.task-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.task-title {
+  font-weight: 600;
+}
+
+.task.done .task-title {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.task-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.task.overdue .task-due {
+  color: var(--overdue);
+  font-weight: 600;
+}
+
+.task.due-today .task-due {
+  color: #8a6700;
+  font-weight: 600;
+}
+
+.tag {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: #eef1f1;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  vertical-align: 1px;
+}
