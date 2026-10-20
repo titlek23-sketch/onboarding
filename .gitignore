@@ -1,0 +1,17 @@
+# 비밀 키
+.env
+.env*.local
+
+# 인사팀 원본 엑셀, 주간 리포트
+원천데이터/
+리포트/
+
+# 파이썬 가상환경
+.venv/
+__pycache__/
+
+# 웹앱 (Next.js)
+node_modules/
+.next/
+out/
+.vercel/
