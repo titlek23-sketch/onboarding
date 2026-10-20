@@ -1,0 +1,5 @@
+# Vercel에는 웹앱만 올린다. 파이썬(엑셀 올리기·주간 리포트)과 SQL은 내 컴퓨터에서만 쓴다.
+python/
+requirements.txt
+sql/
+.venv/
