@@ -401,3 +401,113 @@ input {
   font-weight: 600;
   vertical-align: 1px;
 }
+
+/* ---------- [찾아보기] ---------- */
+.search-input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--text);
+  font-size: 16px;
+}
+
+.search-input:focus {
+  outline: 2px solid var(--band);
+  outline-offset: -1px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 6px;
+}
+
+.chip {
+  padding: 7px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--text);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.chip.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  font-weight: 700;
+}
+
+.result-count {
+  margin: 8px 4px;
+  font-size: 13px;
+}
+
+.empty {
+  text-align: center;
+}
+
+.faq-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faq {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 2px rgba(31, 41, 51, 0.06);
+}
+
+.faq-head {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  padding: 16px 44px 16px 16px;
+  background: none;
+  border: 0;
+  text-align: left;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.faq-q {
+  font-weight: 700;
+}
+
+.faq-a {
+  font-size: 15px;
+}
+
+.faq-dept {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.faq-arrow {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: var(--muted);
+  transition: transform 0.2s ease;
+}
+
+.faq.open .faq-arrow {
+  transform: rotate(180deg);
+}
+
+.faq-detail {
+  margin: 0;
+  padding: 14px 16px 16px;
+  border-top: 1px solid var(--line);
+  font-size: 15px;
+  white-space: pre-line;
+}
